@@ -1,0 +1,13 @@
+n = int(input("Enter number of elements: "))
+
+a = list(map(int, input("Elements: ").split()))
+
+# Selection Sort (Descending Order)
+for i in range(n - 1):
+    max_index = i
+    for j in range(i + 1, n):
+        if a[j] > a[max_index]:
+            max_index = j
+    a[i], a[max_index] = a[max_index], a[i]
+
+print("Sorted Array:", *a)
